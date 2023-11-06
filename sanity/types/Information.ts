@@ -1,8 +1,7 @@
 import { PortableTextBlock } from "sanity"
-export type Press = {
+export type Information = {
   _id: string,
   title: string,
   pageTitle: string,
-  Presslistings: PortableTextBlock[],
+  information: PortableTextBlock[],
 };
-

@@ -5,19 +5,25 @@ export type Social = {
   social_link: string;
   soc: string | import("url").UrlObject;
 };
+export type HeroVisual = {
+  hero_image: string;
+  _key: string;
+  hero_video: string;
 
+}
 export type Settings = {
   password: string;
   _id: string;
   _createdAt: Date;
   title: string;
-  mission: PortableTextBlock[];
-  description: PortableTextBlock[];
-  social: Social[];  // This line is adjusted to be an array of the Social type
+  email: string;
+  latlong: string;
+  social: Social[];  
   seoTitle: string;
   seoDescription: string;
   seoImageUrl: string;
-  twitterSeoImageUrl: string;
   cache: string;
+  footerText: string;
+  herovisual: HeroVisual[];
 };
 

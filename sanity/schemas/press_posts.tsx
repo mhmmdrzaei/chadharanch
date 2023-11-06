@@ -11,7 +11,7 @@ export default {
         readOnly: true,
       },
       {
-        name: 'Presslistings',
+        name: 'presslistings',
         title: 'Press Listings',
         type: 'array', 
          of: [{type: 'block'}]

@@ -10,6 +10,17 @@ export default {
             type: 'string'
           },
           {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            // validation: Rule => Rule.required(),
+            options: {
+              source: 'name',
+              maxLength: 200, // will be ignored if slugify is set
+              validation: (Rule: { required: () => any; }) => Rule.required(),
+            }
+          },
+          {
             name:'description',
             title: 'description',
             type:'text'

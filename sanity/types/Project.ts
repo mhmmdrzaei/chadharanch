@@ -10,5 +10,8 @@ export type Project = {
   projectLocation: string,
   projectMedium: string, 
   mainimage: string,
+  categoryName: string, 
+  categorySlug: string,
   slug: string,
+  projectImages:{ url: string;_key: string; _type: string; attribution: string;}
 };

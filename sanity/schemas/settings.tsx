@@ -33,6 +33,35 @@ export default {
               }
         ]
       },
+           {
+        title: 'Hero Image / Video',
+        name: 'herovisual',
+        description: 'for the love of god some file that is a normal size, nothing bigger than 5mb for video',
+        type: 'array',
+        of:[
+            {
+              title: 'Hero Image',
+              name: 'hero_image',
+              type: 'image',
+              options: {
+                hotspot: true // <-- Defaults to false
+              },
+              fields: [
+                {
+                  name: 'attribution',
+                  type: 'string',
+                  title: 'Attribution',
+                }
+              ]
+            },
+            {
+              title: 'Hero Video',
+              name: 'hero_video',
+              type: 'file',
+  
+            }
+        ]
+      },
       {
         name: 'footerText',
         title: 'Footer Text',
