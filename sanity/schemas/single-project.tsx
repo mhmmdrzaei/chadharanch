@@ -21,8 +21,8 @@ export default {
         }
       },
       {
-        title: 'visibility',
-        name: 'Visible',
+        title: 'Visibility',
+        name: 'visible',
         type: 'boolean',
         // validation: Rule => Rule.required()
       },

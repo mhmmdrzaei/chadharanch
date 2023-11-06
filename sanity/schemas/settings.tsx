@@ -36,7 +36,7 @@ export default {
            {
         title: 'Hero Image / Video',
         name: 'herovisual',
-        description: 'for the love of god some file that is a normal size, nothing bigger than 5mb for video',
+        description: 'a normal size file please, nothing bigger than 5mb for video',
         type: 'array',
         of:[
             {
