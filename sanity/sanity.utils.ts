@@ -5,6 +5,7 @@ import { Settings } from "./types/Settings";
 import { Information } from "./types/Information";
 import { Press } from "./types/Press";
 import { Project } from "./types/Project"
+import { ProjectCategory } from "./types/ProjectCategory";
 
 
 
@@ -16,15 +17,15 @@ export async function getsettings(): Promise<Settings[]> {
        latlong,
        title,
        footerText, 
-       "herovisual": herovisual.asset->url,
-       "social": social[]{
-          social_name,
-          social_link,
-          _key
+       "herovisual": herovisual[]{
+          _key,
+          "heroImgUrl": asset->url,
+          _type
        },
-      "seoTitle": page_seo.title,
-      "seoDescription": page_seo.description,
-      "seoImageUrl": page_seo.seo_image.asset->url,
+      "logo": site_log.asset->url,
+      "seoTitle": seo.title,
+      "seoDescription": seo.description,
+      "seoImageUrl": seo.seo_image.asset->url,
        
        
  }`,       {
@@ -96,6 +97,22 @@ export async function getsettings(): Promise<Settings[]> {
         
         
       
+    }
+    )
+  }
+
+  export async function getCat( slug: string): Promise<ProjectCategory>{
+    return createClient(clientConfig).fetch(
+      groq`*[_type == "projectCategory" ]{
+        _id,
+        name,
+        "slug": slug.current,
+        description
+      
+        
+    }`,
+    {
+     cache: 'no-store'
     }
     )
   }
