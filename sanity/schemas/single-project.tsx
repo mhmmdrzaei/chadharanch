@@ -78,7 +78,7 @@ export default {
                 {
                   name: 'attribution',
                   type: 'string',
-                  title: 'Attribution',
+                  title: 'Alt',
                 }
               ]
             },
@@ -90,7 +90,7 @@ export default {
                 {
                     name: 'attribution',
                     type: 'string',
-                    title: 'Attribution',
+                    title: 'Alt',
                   }
               ]
             }

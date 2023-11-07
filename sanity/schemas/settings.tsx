@@ -11,6 +11,12 @@ export default {
         type: 'string'
       },
       {
+        title: 'Site Logo',
+        name: 'site_log',
+        type: 'file',
+        
+      },
+      {
         name: 'email',
         title: 'Email Address',
         type: 'string'
@@ -19,19 +25,6 @@ export default {
         name: 'latlong',
         title: 'Lat. Long.',
         type: 'string'
-      },
-      {
-        title: 'Social Links',
-        name: 'social',
-        type: 'array',
-        of:[
-            {
-                title: 'Social Links',
-                name: 'social',
-                type: 'object',
-                fields: [{name: 'social_link',title: 'Social Link',type: 'url'},{name:'social_name', title:'Social Name',type:'string'}]
-              }
-        ]
       },
            {
         title: 'Hero Image / Video',
@@ -50,7 +43,7 @@ export default {
                 {
                   name: 'attribution',
                   type: 'string',
-                  title: 'Attribution',
+                  title: 'Alt',
                 }
               ]
             },
