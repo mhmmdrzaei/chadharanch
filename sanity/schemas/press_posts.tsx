@@ -11,6 +11,16 @@ export default {
         readOnly: true,
       },
       {
+        title: 'Slug',
+        name: 'slug',
+        type: 'slug',
+        readOnly: true,
+        options: {
+          source: 'title',
+          maxLength: 200, // will be ignored if slugify is set
+        }
+      },
+      {
         name: 'presslistings',
         title: 'Press Listings',
         type: 'array', 
