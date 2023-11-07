@@ -41,7 +41,7 @@ export async function getsettings(): Promise<Settings[]> {
         _id,
         title,
         "slug": slug.current,
-        visibility,
+        visible,
         projectdescription,
         projectDate,
         projectLocation,
@@ -98,7 +98,7 @@ export async function getsettings(): Promise<Settings[]> {
     }
     )
   }
-  export async function getInformation(): Promise<Information>{
+  export async function getInformation(): Promise<Information[]>{
     return createClient(clientConfig).fetch(
       groq`*[_type == "information"]{
         _id,
@@ -112,9 +112,9 @@ export async function getsettings(): Promise<Settings[]> {
     }
     )
   }
-  export async function getPress(): Promise<Press>{
+  export async function getPress(): Promise<Press[]>{
     return createClient(clientConfig).fetch(
-      groq`*[_type == "press" && slug.current == $slug][0]{
+      groq`*[_type == "press"]{
         _id,
         title,
         pageTitle,
@@ -128,7 +128,7 @@ export async function getsettings(): Promise<Settings[]> {
     )
   }
 
-  export async function getCat(): Promise<ProjectCategory>{
+  export async function getCat(): Promise<ProjectCategory[]>{
     return createClient(clientConfig).fetch(
       groq`*[_type == "projectCategory" ]{
         _id,

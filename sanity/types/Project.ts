@@ -4,7 +4,7 @@ export type Project = {
   _id: string,
   name: string, 
   title: string,
-  visibility: boolean,
+  visible: boolean,
   projectdescription:PortableTextBlock[],
   projectDate: string,
   projectLocation: string,
