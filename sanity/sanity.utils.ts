@@ -66,24 +66,53 @@ export async function getsettings(): Promise<Settings[]> {
     }
     )
   }
-  export async function getInformation( slug: string): Promise<Information>{
+  export async function getProject(slug: string): Promise<Project[]> {
     return createClient(clientConfig).fetch(
-      groq`*[_type == "information" && slug.current == $slug][0]{
+      groq`*[_type == "singleProject"&& slug.current == $slug][0]{
+        _id,
+        title,
+        "slug": slug.current,
+        visibility,
+        projectdescription,
+        projectDate,
+        projectLocation,
+        "categoryName": category->name, // Include the category name
+        "categorySlug": category->slug.current, 
+        projectMedium,
+        "mainimage": mainimage[]{
+          "url": asset->url,
+        },
+        "projectImages": projectImages[]{
+          "url": asset->url,
+          attribution
+        }
+
+
+        
+        
+    }`,
+    {
+      slug,
+      cache: 'no-store'
+      
+    }
+    )
+  }
+  export async function getInformation(): Promise<Information>{
+    return createClient(clientConfig).fetch(
+      groq`*[_type == "information"]{
         _id,
         title,
         pageTitle,
         information,
         
     }`,
-    {slug,   
+    {  
      cache: 'no-store'
-        
-        
-      
     }
     )
   }
-  export async function getPress( slug: string): Promise<Press>{
+  export async function getPress(): Promise<Press>{
     return createClient(clientConfig).fetch(
       groq`*[_type == "press" && slug.current == $slug][0]{
         _id,
@@ -92,16 +121,14 @@ export async function getsettings(): Promise<Settings[]> {
         presslistings,
         
     }`,
-    {slug,   
-     cache: 'no-store'
-        
-        
+    {
+     cache: 'no-store'    
       
     }
     )
   }
 
-  export async function getCat( slug: string): Promise<ProjectCategory>{
+  export async function getCat(): Promise<ProjectCategory>{
     return createClient(clientConfig).fetch(
       groq`*[_type == "projectCategory" ]{
         _id,

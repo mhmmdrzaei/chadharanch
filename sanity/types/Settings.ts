@@ -1,4 +1,3 @@
-import { PortableTextBlock } from "sanity"
 
 export type HeroVisual = {
   hero_image: string;
@@ -21,4 +20,5 @@ export type Settings = {
   footerText: string;
   herovisual: HeroVisual[];
 };
+
 
