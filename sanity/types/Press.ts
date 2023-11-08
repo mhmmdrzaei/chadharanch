@@ -3,6 +3,6 @@ export type Press = {
   _id: string,
   title: string,
   pageTitle: string,
-  Presslistings: PortableTextBlock[],
+  presslistings: PortableTextBlock[],
 };
 

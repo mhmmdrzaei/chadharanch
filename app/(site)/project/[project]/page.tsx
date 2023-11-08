@@ -1,24 +1,23 @@
-import { getCat, getProject, getsettings } from "@/sanity/sanity.utils";
+import { getProject, getsettings } from "@/sanity/sanity.utils";
+import { Project } from '@/sanity/types/Project'
 
 type Props = {
-    params: {project: string}
+    params: { project: string }
 }
 
-
-
-export default async function Project({params}:Props) {
+export default async function Project({ params }: Props) {
     const slug = params.project;
+    const projects: Project[] = await getProject(slug); // Expecting an array of projects
+    const settings = await getsettings();
 
-    const project = await getProject(slug)
-    const allProjects = await getCat()
-    const settings = await getsettings()
-    if (!project) {
+    if (projects.length === 0) {
         return <div>Nothing Found...</div>;
     }
-    
+
+
     return (
-       <>
-       <h3>test</h3>
-       </>
+        <>
+            {/* <h3>{projects.title}</h3> */}
+        </>
     )
-    }
+}
