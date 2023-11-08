@@ -66,7 +66,7 @@ export async function getsettings(): Promise<Settings[]> {
     }
     )
   }
-  export async function getProject(slug: string): Promise<Project[]> {
+  export async function getProject(slug: string): Promise<Project> {
     return createClient(clientConfig).fetch(
       groq`*[_type == "singleProject"&& slug.current == $slug][0]{
         _id,
