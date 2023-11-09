@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { Fullscreen } from 'yet-another-react-lightbox/plugins';
 
 type PhotoType = {
+  key: string;
   mainImage: string;
   src: string;
   width: number;
@@ -51,10 +52,17 @@ export default function ProjectImages({ project }: HeaderProps) {
   const photos: PhotoType[] = [mainImage, ...additionalImages];
 
   const [index, setIndex] = useState(-1);
+  const openLightbox = (index: number) => {
+    setIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setIndex(-1);
+  };
 
   return (
     <>
-      <PhotoAlbum
+      {/* <PhotoAlbum
         photos={photos}
         layout="columns"
         targetRowHeight={150} // Adjust the height as desired
@@ -63,7 +71,19 @@ export default function ProjectImages({ project }: HeaderProps) {
         onClick={({ index }) => setIndex(index)}
         padding={10}
         spacing={0}
-      />
+      /> */}
+            <div className="image-gallery">
+        {photos.map((photo, idx) => (
+          <img
+            key={photo.key}
+            src={photo.src}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            onClick={() => openLightbox(idx)}
+          />
+        ))}
+      </div>
       <Lightbox
         slides={photos}
         open={index >= 0}
