@@ -13,7 +13,9 @@ export type Project = {
   categoryName: string, 
   categorySlug: string,
   slug: string,
+  password: string,
   projectImages:{
+    length: number;
       filter: any;
       map: any; url: string;_key: string; _type: string; attribution: string;
 }

@@ -70,6 +70,7 @@ export async function getsettings(): Promise<Settings[]> {
         visibility,
         projectdescription,
         projectDate,
+        password,
         projectLocation,
         "categoryName": category->name, // Include the category name
         "categorySlug": category->slug.current, 

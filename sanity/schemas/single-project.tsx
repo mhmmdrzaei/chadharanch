@@ -27,6 +27,13 @@ export default {
         // validation: Rule => Rule.required()
       },
       {
+        title: 'Password (if Applicable)',
+        name: 'password',
+        type: 'string',
+        description: 'The password page will appear only if this is filled out. if empty it will go to project as usual.'
+
+      },
+      {
         name: 'projectdescription',
         title: 'Project Description',
         type: 'array', 

@@ -1,6 +1,7 @@
 import { getsettings, getCat, getProjects } from '@/sanity/sanity.utils'
 import Header from './components/header/header.component'
 import ProjectListing from './components/projectListing/projectListing.component'
+import Footer from './components/footer/footer.component'
 
 export default async function Home() {
   const settings = await getsettings()
@@ -19,6 +20,7 @@ export default async function Home() {
         <ProjectListing projects={projects} categories={categories}/>
 
       </section>
+      <Footer set={settings} />
     
     </main>
   )
