@@ -13,5 +13,8 @@ export type Project = {
   categoryName: string, 
   categorySlug: string,
   slug: string,
-  projectImages:{ url: string;_key: string; _type: string; attribution: string;}
+  projectImages:{
+      filter: any;
+      map: any; url: string;_key: string; _type: string; attribution: string;
+}
 };

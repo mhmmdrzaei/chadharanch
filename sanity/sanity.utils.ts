@@ -48,16 +48,11 @@ export async function getsettings(): Promise<Settings[]> {
         "categoryName": category->name, // Include the category name
         "categorySlug": category->slug.current, 
         projectMedium,
-        "mainimage": mainimage[]{
-          "url": asset->url,
-        },
+        "mainimage": mainimage.asset->url,
         "projectImages": projectImages[]{
           "url": asset->url,
           attribution
-        }
-
-
-        
+        } 
         
     }`,
     {
@@ -79,12 +74,11 @@ export async function getsettings(): Promise<Settings[]> {
         "categoryName": category->name, // Include the category name
         "categorySlug": category->slug.current, 
         projectMedium,
-        "mainimage": mainimage[]{
-          "url": asset->url,
-        },
+        "mainimage": mainimage.asset->url,
         "projectImages": projectImages[]{
           "url": asset->url,
-          attribution
+          attribution,
+          _type
         }
 
 
