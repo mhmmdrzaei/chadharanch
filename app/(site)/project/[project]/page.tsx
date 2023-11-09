@@ -31,7 +31,6 @@ type LinkMark = {
   };
 
 type Props = {
-    project: Project
     params: { project: string }
 }
 type PhotoType = {
