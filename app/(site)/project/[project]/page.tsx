@@ -36,9 +36,8 @@ export default async function Project({ params }: Props) {
         <section className="pageSide">
           <Header set={settings} cat={categories}/>
         </section>
-        <section className="pageMain">
+        <section className="pageMain projectPage">
         <PasswordProtectedProject project={project} />
-            {/* <ProjectDetails project={project} /> */}
 
         </section>
         <Footer set={settings} />

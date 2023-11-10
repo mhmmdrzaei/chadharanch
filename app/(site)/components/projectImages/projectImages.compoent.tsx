@@ -1,11 +1,10 @@
 "use client"
 import { v4 as uuidv4 } from 'uuid';
 import { Project } from '@/sanity/types/Project';
-import PhotoAlbum from 'react-photo-album';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Fullscreen } from 'yet-another-react-lightbox/plugins';
 
 type PhotoType = {
@@ -69,7 +68,7 @@ export default function ProjectImages({ project }: HeaderProps) {
             key={photo.key}
             src={photo.src}
             alt={photo.alt}
-            width={photo.width}
+            width={700}
             height={photo.height}
             onClick={() => openLightbox(idx)}
           />

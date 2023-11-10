@@ -16,7 +16,7 @@ export default {
         type: 'slug',
         readOnly: true,
         options: {
-          source: 'title',
+          source: 'pageTitle',
           maxLength: 200, // will be ignored if slugify is set
         }
       },

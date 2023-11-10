@@ -56,7 +56,7 @@ export default function ProjectDetails({ project, password }: HeaderProps) {
         </section>
         )}
         {project.projectMedium && (
-        <p><span>Medium: </span>{project.projectMedium}</p>
+        <p className='medium'><span>Medium: </span>{project.projectMedium}</p>
         )}
         <section className="images">
         
