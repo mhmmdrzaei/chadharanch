@@ -21,6 +21,11 @@ export default {
         }
       },
       {
+        title: 'Sort Order',
+        name: 'sort',
+        type: 'number',
+      },
+      {
         title: 'Visibility',
         name: 'visible',
         type: 'boolean',

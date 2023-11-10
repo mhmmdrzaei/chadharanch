@@ -14,6 +14,7 @@ export type Project = {
   categorySlug: string,
   slug: string,
   password: string,
+  sort: number, 
   projectImages:{
     length: number;
       filter: any;

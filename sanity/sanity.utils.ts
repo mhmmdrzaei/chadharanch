@@ -48,6 +48,7 @@ export async function getsettings(): Promise<Settings[]> {
         "categoryName": category->name, // Include the category name
         "categorySlug": category->slug.current, 
         projectMedium,
+        sort,
         "mainimage": mainimage.asset->url,
         "projectImages": projectImages[]{
           "url": asset->url,
