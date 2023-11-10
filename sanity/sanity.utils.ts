@@ -129,6 +129,7 @@ export async function getsettings(): Promise<Settings[]> {
       groq`*[_type == "projectCategory" ]{
         _id,
         name,
+        sort,
         "slug": slug.current,
         description
       

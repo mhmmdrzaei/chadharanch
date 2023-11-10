@@ -29,11 +29,15 @@ const closeMenu = () => {
 
     return (
         <>
+        
             <button className={`menuButton ${activeMenu ? 'menuButtonActive' : ''}`}  onClick={openMenu}>
                 Menu
             </button>
+            <section className="menuItems">
             <ul className='categoryLinks'>
-                {cat.map((category) => (
+                {cat
+                .sort((a, b) => (a.sort || Infinity) - (b.sort || Infinity))
+                .map((category) => (
                     <li key={category._id}>
                     <Link href={`/#${category.slug}`}>
                         {category.name}
@@ -49,6 +53,9 @@ const closeMenu = () => {
             <section className="latlong">
                 {setting.latlong}
             </section>
+
+            </section>
+
         
         </>
         

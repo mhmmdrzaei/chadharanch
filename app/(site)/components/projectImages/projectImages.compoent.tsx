@@ -4,6 +4,7 @@ import { Project } from '@/sanity/types/Project';
 import PhotoAlbum from 'react-photo-album';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Image from 'next/image';
 import { useState } from 'react';
 import { Fullscreen } from 'yet-another-react-lightbox/plugins';
 
@@ -62,19 +63,9 @@ export default function ProjectImages({ project }: HeaderProps) {
 
   return (
     <>
-      {/* <PhotoAlbum
-        photos={photos}
-        layout="columns"
-        targetRowHeight={150} // Adjust the height as desired
-        // Use media query to dynamically adjust the number of columns
-        columns={window.innerWidth >= 700 ? 2 : 1}
-        onClick={({ index }) => setIndex(index)}
-        padding={10}
-        spacing={0}
-      /> */}
             <div className="image-gallery">
         {photos.map((photo, idx) => (
-          <img
+          <Image
             key={photo.key}
             src={photo.src}
             alt={photo.alt}

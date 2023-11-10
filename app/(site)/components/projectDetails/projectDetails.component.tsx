@@ -40,7 +40,7 @@ export default function ProjectDetails({ project, password }: HeaderProps) {
     return (
         <>
         <h3>{project.title}</h3>
-        <p>
+        <p className='dateLoc'>
         {project.projectDate && (
             
             <>{project.projectDate} </>
