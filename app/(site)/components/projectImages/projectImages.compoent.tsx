@@ -68,7 +68,7 @@ export default function ProjectImages({ project }: HeaderProps) {
         {photos.map((photo, idx) => (
           <figure>
             <Image
-            key={photo.key}
+            key={uuidv4()}
             src={photo.src}
             alt={photo.alt}
             width={700}
