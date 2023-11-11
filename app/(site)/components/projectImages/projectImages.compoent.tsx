@@ -66,9 +66,9 @@ export default function ProjectImages({ project }: HeaderProps) {
     <>
       <div className="image-gallery">
         {photos.map((photo, idx) => (
-          <figure>
+          <figure key={photo.key}>
             <Image
-            key={uuidv4()}
+            
             src={photo.src}
             alt={photo.alt}
             width={700}
