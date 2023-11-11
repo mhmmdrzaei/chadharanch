@@ -60,11 +60,14 @@ export default function ProjectImages({ project }: HeaderProps) {
     setIndex(-1);
   };
 
+
+
   return (
     <>
-            <div className="image-gallery">
+      <div className="image-gallery">
         {photos.map((photo, idx) => (
-          <Image
+          <figure>
+            <Image
             key={photo.key}
             src={photo.src}
             alt={photo.alt}
@@ -72,6 +75,9 @@ export default function ProjectImages({ project }: HeaderProps) {
             height={photo.height}
             onClick={() => openLightbox(idx)}
           />
+
+          </figure>
+          
         ))}
       </div>
       <Lightbox

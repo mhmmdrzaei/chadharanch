@@ -10,12 +10,11 @@ export default async function Information() {
     return (
       
      
-      <main>
-        <section className="pageSide">
+      <main className='infoPage'>
+        <section className="pageSide ">
           <Header set={settings} cat={categories}/>
         </section>
         <InfoContent info={info} />
-        <Footer set={settings} />
 
         
       </main>

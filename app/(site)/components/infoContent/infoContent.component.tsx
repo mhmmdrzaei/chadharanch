@@ -35,9 +35,11 @@ export default function InfoContent({ info }: HeaderProps) {
   return (
     <>
       {info.map((infoPage) => (
-        <section className="pageMain" key={infoPage._id}>
+        <section className="pageMain singlePage" key={infoPage._id}>
           <h2>{infoPage.pageTitle}</h2>
+          <div className="singlePageContent">
           <PortableText value={infoPage.information} components={components as any} />
+          </div>
         </section>
       ))}
     </>

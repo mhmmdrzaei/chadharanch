@@ -19,6 +19,7 @@ export async function getsettings(): Promise<Settings[]> {
        footerText, 
        "herovisual": herovisual[]{
           _key,
+          _type,
           "heroImgUrl": asset->url,
           _type
        },

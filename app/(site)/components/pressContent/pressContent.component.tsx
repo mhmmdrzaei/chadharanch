@@ -35,9 +35,11 @@ export default function PressContent({ press }: HeaderProps) {
   return (
     <>
       {press.map((pressPage) => (
-        <section className="pageMain" key={pressPage._id}>
+        <section className="pageMain singlePage" key={pressPage._id}>
           <h2>{pressPage.pageTitle}</h2>
+          <div className="singlePageContent">
           <PortableText value={pressPage.presslistings} components={components as any} />
+          </div>
         </section>
       ))}
     </>

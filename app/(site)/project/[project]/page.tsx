@@ -40,7 +40,6 @@ export default async function Project({ params }: Props) {
         <PasswordProtectedProject project={project} />
 
         </section>
-        <Footer set={settings} />
         
       </main>
     )

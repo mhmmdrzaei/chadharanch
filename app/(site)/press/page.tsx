@@ -11,12 +11,11 @@ export default async function Press() {
     return (
       
      <>
-      <main>
+      <main className='pressPage'>
         <section className="pageSide">
           <Header set={settings} cat={categories}/>
         </section>
         <PressContent press={press} />
-        <Footer set={settings} />
       </main>
       </>
     )

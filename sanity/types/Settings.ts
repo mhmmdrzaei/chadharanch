@@ -1,10 +1,18 @@
 
-export type HeroVisual = {
-  hero_image: string;
+export type HeroImage = {
   _key: string;
-  hero_video: string;
+  _type: 'hero_image';
+  heroImgUrl: string;
+};
 
-}
+export type HeroVideo = {
+  _key: string;
+  _type: 'hero_video';
+  heroImgUrl: string;
+};
+
+export type HeroVisual = HeroImage | HeroVideo;
+
 export type Settings = {
   password: string;
   logo: string;

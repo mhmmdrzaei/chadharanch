@@ -46,8 +46,8 @@ const closeMenu = () => {
                 ))}
             </ul>
             <section className="menuLinks">
-            <Link href={`/press`}>Press</Link>
-            <Link href={`/information`}>Information</Link>
+            <Link href={`/press`} className='pressLink'>Press</Link>
+            <Link href={`/information`} className='infoLink'>Information</Link>
             <Link href={`mailto:${setting.email}`}>{setting.email}</Link>
             </section>
             <section className="latlong">
