@@ -1,10 +1,8 @@
 import { getCat, getProject, getsettings } from "@/sanity/sanity.utils";
 import { Project } from '@/sanity/types/Project'
-
 import Header from "../../components/header/header.component";
-import ProjectDetails from "../../components/projectDetails/projectDetails.component";
-import Footer from "../../components/footer/footer.component";
 import PasswordProtectedProject from "../../components/passwordProtected/passwordProtected.component";
+import ProjectPage from "../../components/singleProjectListing/singleProjectListing.component";
 type Props = {
     params: { project: string }
 }
@@ -37,7 +35,7 @@ export default async function Project({ params }: Props) {
           <Header set={settings} cat={categories}/>
         </section>
         <section className="pageMain projectPage">
-        <PasswordProtectedProject project={project} />
+          <ProjectPage project={project} />
 
         </section>
         

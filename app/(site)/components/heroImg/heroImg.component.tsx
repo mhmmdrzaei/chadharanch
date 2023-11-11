@@ -5,6 +5,8 @@ type HeaderProps = {
    
 };
 
+export const dynamic = 'force-dynamic'
+
 
 export default function HeroImage({ settings }: HeaderProps) {
 

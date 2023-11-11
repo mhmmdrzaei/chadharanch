@@ -1,4 +1,3 @@
-"use client"
 import { Project } from '@/sanity/types/Project';
 import { ProjectCategory } from '@/sanity/types/ProjectCategory';
 import Link from 'next/link';
@@ -7,6 +6,8 @@ type HeaderProps = {
   projects: Project[];
   categories: ProjectCategory[];
 };
+
+export const dynamic = 'force-dynamic'
 
 export default function ProjectListing({ projects, categories }: HeaderProps) {
   return (

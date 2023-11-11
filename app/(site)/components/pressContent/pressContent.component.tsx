@@ -1,6 +1,8 @@
 import { PortableText } from "@portabletext/react";
 import {Press} from '@/sanity/types/Press'
 
+export const dynamic = 'force-dynamic'
+
 type LinkMark = {
   blank?: boolean;
   href: string;

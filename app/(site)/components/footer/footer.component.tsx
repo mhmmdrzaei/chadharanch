@@ -3,7 +3,7 @@ import {Settings} from '@/sanity/types/Settings'
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-
+export const dynamic = 'force-dynamic'
 
 type HeaderProps = {
     set: Settings[];
