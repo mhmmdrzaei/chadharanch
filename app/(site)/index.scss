@@ -38,6 +38,9 @@ a {
         font-weight: 700;
     }
 }
+button {
+    color: #000000;
+}
 main {
     max-width: 2000px;
     margin: 0 auto;
@@ -320,7 +323,7 @@ footer {
                 .menuItemsContainer {
                     position: absolute;
                     right: 2.5%;
-                    bottom: 2.5%;
+                    bottom: calc(2.5% + 50px);
             }
             }
         }
@@ -388,7 +391,7 @@ footer {
                 .menuItemsContainer {
                     position: absolute;
                     right: 5%;
-                    bottom: 5%;
+                    bottom: calc(5% + 50px);
             }
             }
         }
