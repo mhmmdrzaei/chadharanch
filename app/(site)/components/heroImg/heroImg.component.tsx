@@ -15,7 +15,7 @@ export default function HeroImage({ settings }: HeaderProps) {
             {settings.map((siteSetting) => (
             <>
             {siteSetting.herovisual.length > 0 && (
-              <section key={siteSetting._id}>
+              <section key={siteSetting._id} className="heroSection">
               {siteSetting.herovisual.map((hero) => (
                 <div key={hero._key} className='heroContainer' >
                   {hero._type === 'hero_image' && (

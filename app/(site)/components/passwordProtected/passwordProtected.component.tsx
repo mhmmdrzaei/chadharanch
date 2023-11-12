@@ -27,8 +27,8 @@ const PasswordProtectedProject: React.FC<PasswordProtectedProjectProps> = ({ pro
     if (project.password && !showDetails) {
 
       return (
-        <>
-          <h3>Password Page</h3>
+        <section className='passwordProtected'>
+          <h3>Password Protected</h3>
           <p>Please enter the password to access this content:</p>
           <input
             type="password"
@@ -36,7 +36,7 @@ const PasswordProtectedProject: React.FC<PasswordProtectedProjectProps> = ({ pro
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={handlePasswordSubmit}>Submit</button>
-        </>
+        </section>
       );
     }
 

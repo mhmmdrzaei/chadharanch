@@ -30,10 +30,11 @@ const closeMenu = () => {
     return (
         <>
         
-            <button className={`menuButton ${activeMenu ? 'menuButtonActive' : ''}`}  onClick={openMenu}>
+            <button className={`menuButton`} onClick={openMenu} >
                 Menu
             </button>
-            <section className="menuItems">
+            <section className={`menuItems ${activeMenu ? 'menuButtonActive' : ''}`}  >
+            <section className="menuItemsContainer">
             <ul className='categoryLinks'>
                 {cat
                 .sort((a, b) => (a.sort || Infinity) - (b.sort || Infinity))
@@ -45,7 +46,7 @@ const closeMenu = () => {
                     </li>
                 ))}
             </ul>
-            <section className="menuLinks">
+            <section className="menuLinks" >
             <Link href={`/press`} className='pressLink'>Press</Link>
             <Link href={`/information`} className='infoLink'>Information</Link>
             <Link href={`mailto:${setting.email}`}>{setting.email}</Link>
@@ -53,6 +54,9 @@ const closeMenu = () => {
             <section className="latlong">
                 {setting.latlong}
             </section>
+
+            </section>
+           
 
             </section>
 
