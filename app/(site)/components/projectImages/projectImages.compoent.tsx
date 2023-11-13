@@ -69,6 +69,7 @@ export default function ProjectImages({ project }: HeaderProps) {
           <figure key={photo.key}>
             <Image
             loading="eager" 
+            priority={true}
             src={photo.src}
             alt={photo.alt}
             width={1200}

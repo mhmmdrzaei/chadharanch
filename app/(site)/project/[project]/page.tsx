@@ -1,10 +1,30 @@
 import { getCat, getProject, getsettings } from "@/sanity/sanity.utils";
 import { Project } from '@/sanity/types/Project'
 import Header from "../../components/header/header.component";
-import PasswordProtectedProject from "../../components/passwordProtected/passwordProtected.component";
 import ProjectPage from "../../components/singleProjectListing/singleProjectListing.component";
+import type { Metadata, ResolvingMetadata } from 'next'
+
 type Props = {
     params: { project: string }
+}
+
+
+ 
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.project;
+  const settings = await getsettings()
+  const project = await getProject(slug);
+
+  return {
+    title: `${settings[0].seoTitle} | ${project.title}` ,
+    description: settings[0].seoDescription,
+    openGraph: {
+      images: [`${settings[0].seoImageUrl}`],
+    },
+  }
 }
 
 export default async function Project({ params }: Props) {

@@ -4,6 +4,22 @@ import ProjectListing from './components/projectListing/projectListing.component
 import Footer from './components/footer/footer.component'
 import HeroImage from './components/heroImg/heroImg.component'
 
+import type { Metadata, ResolvingMetadata } from 'next'
+ 
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const settings = await getsettings()
+  return {
+    title: `${settings[0].seoTitle}` ,
+    description: settings[0].seoDescription,
+    openGraph: {
+      images: [`${settings[0].seoImageUrl}`],
+    },
+  }
+}
+
+
 export default async function Home() {
   const settings = await getsettings()
   const categories = await getCat()

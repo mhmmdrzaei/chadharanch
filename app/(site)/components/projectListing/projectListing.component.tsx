@@ -15,8 +15,8 @@ export default function ProjectListing({ projects, categories }: HeaderProps) {
       {categories
        .sort((a, b) => (a.sort || Infinity) - (b.sort || Infinity))
       .map((category) => (
-        <div key={category._id} className="singleCatListing">
-          <h2 id={`${category.slug}`}>{category.name}</h2>
+        <div key={category._id} className="singleCatListing" id={`${category.slug}`}>
+          <h2>{category.name}</h2>
           <ul>
             {projects
               .filter(

@@ -26,7 +26,7 @@ figure {
 h1, h2, h3, h4, h5, p, span, button {
     font-family: 'Inter', sans-serif;
     @include fontSize(7.5);
-    line-height: 1.6;
+    line-height: 1.5;
     
 }
 
@@ -54,22 +54,22 @@ body {
     
 }
 p, a {
-    line-height: 1.6;
+    line-height: 1.5;
 }
 .dateLoc {
     font-family: 'Nanum Myeongjo', serif;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
 }
 
 footer {
     width: 82.8%;
     margin-left: auto;
-    margin-top: 120px;
+    // margin-top: 120px;
     p {
         margin: 0;
         font-weight: 700;
-        line-height: .9;
+        line-height: 0;
 
     }
 }
@@ -85,11 +85,11 @@ footer {
         width: 192px;
         display: block;
         img {
-            max-width: 35px;
+        max-width: 35px;
         width: 100%;
         position: absolute;
         top: 35px;
-        left: 40%;
+        left: 50%;
         transform: translate(-50%, -50%);
 
         }
@@ -138,7 +138,7 @@ footer {
     position: relative;
     height: calc(100dvh - 48px);
     overflow: hidden;
-    margin-bottom: 120px;
+    margin-bottom: 96px;
     img {
         // position: absolute;
         width: 100%;
@@ -147,9 +147,10 @@ footer {
     }
 }
 .singleCatListing {
-    margin-bottom: 120px;
+    margin-bottom: 154px;
     h2 {
         margin: 0 auto 20px;
+        padding-top: 60px;
         font-weight: 400;
         text-transform: uppercase;
     }
@@ -165,8 +166,8 @@ footer {
                     font-weight: 400;
                 }
             }
-            width: calc(33% - 5px);
-            margin-bottom: 20px;
+            width: calc(33% - 1px);
+            margin-bottom: 36px;
             figure {
                 height: 504px;
                 img {
@@ -191,21 +192,23 @@ footer {
         margin: 0;
     }
     .projectDescription {
-        margin: 20px 0;
+        margin: 24px 0;
+        max-width: 540px;
     }
     .medium {
-        margin: 20px 0;
+        margin: 24px 0;
         span {
             font-weight: 700;
         }
     }
     .image-gallery {
         @extend .flex;
+        max-width: 1300px;
         // flex-flow: nowrap;
         figure {
             // position: relative;
-            max-width: calc(50% - 5px);
-            margin-bottom: 10px;
+            max-width: calc(50% - 6px);
+            margin-bottom: 12px;
            
             img {          
                 object-fit: contain;
@@ -299,8 +302,7 @@ footer {
     }
     .pageMain {
         width: 100%;
-        position: relative;
-        top: 65px;
+        margin-top: 65px;
     }
     .pageSide {
         .headingContainer {
@@ -357,16 +359,18 @@ footer {
         }
     }
     .singleCatListing {
-        margin-bottom: 60px;
+        margin-bottom: 124px;
+        h2 {
+            padding-top: 80px;
+        }
         ul li {
-            width: calc(50% - 5px);
+            width: calc(50% - 2px);
             figure {
                 height: 500px;
             }
     } 
     }
     footer {
-        // margin: 0px 0 2.5% 0 ;
         margin-left: 0;
     }
     .projectPage .image-gallery figure {
@@ -399,7 +403,7 @@ footer {
         left: -5%;
     }
     footer {
-        margin: 0px 0 5% 0 ;
+        // margin: 0px 0 5% 0 ;
     }
     .singleCatListing {
         margin-bottom: 60px;
@@ -436,6 +440,18 @@ footer {
         ul li {
             figure {
                 height: 446px;
+            }
+    } 
+    }
+
+}
+
+@media(min-width: 1500px){
+    .singleCatListing {
+
+        ul li {
+            figure {
+                height: 650px;
             }
     } 
     }

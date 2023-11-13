@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import Menu from '../headerInteractive/headerInteractive.component';
 
+
 export const dynamic = 'force-dynamic'
 
 type HeaderProps = {
@@ -18,7 +19,10 @@ export default function Header({ set, cat }: HeaderProps) {
 
     return (
         <>
+        
              {set.map((setting) => ( 
+                <>
+    
                 <section className='headingContainer' key={uuidv4()}>
                     <Link href={`/`} className='logoLink'>
                     <img src={setting.logo} alt='Chadha Ranch Logo' />
@@ -33,6 +37,9 @@ export default function Header({ set, cat }: HeaderProps) {
                         
 
                 </section>
+                
+                </>
+               
           ))}
         </>
     );
