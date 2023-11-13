@@ -2,10 +2,9 @@ import { getsettings, getInformation, getCat } from '@/sanity/sanity.utils'
 import Header from '../components/header/header.component';
 import InfoContent from '../components/infoContent/infoContent.component';
 
-import type { Metadata, GetServerSidePropsContext } from 'next'
+import type { Metadata } from 'next'
  
 export async function generateMetadata(
-  context: GetServerSidePropsContext
 ): Promise<Metadata> {
   const settings = await getsettings()
 
