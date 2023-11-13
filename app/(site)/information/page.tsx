@@ -12,7 +12,7 @@ export async function generateMetadata(
   return {
     title: `${settings[0].seoTitle} | Information` ,
     description: settings[0].seoDescription,
-    metadataBase: new URL('https://cdn.sanity.io/images/'),
+    metadataBase: new URL(`${settings[0].seoImageUrl}`),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
