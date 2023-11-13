@@ -7,13 +7,18 @@ import type { Metadata } from 'next'
 export async function generateMetadata(
 ): Promise<Metadata> {
   const settings = await getsettings()
+  const img = settings[0].seoImageUrl;
+  console.log(img)
   return {
     title: `${settings[0].seoTitle} | Information` ,
     description: settings[0].seoDescription,
+    metadataBase: new URL('https://chadharanch.com'),
+
     openGraph: {
       title: `${settings[0].seoTitle}` ,
       description: settings[0].seoDescription,
-      url: 'https://chadharanch.com',
+      
+      url: '',
       siteName: 'CHADHA RANCH',
 
       images: [

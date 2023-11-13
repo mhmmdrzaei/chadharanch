@@ -9,6 +9,8 @@ export async function generateMetadata(
   return {
     title: `${settings[0].seoTitle} | Press` ,
     description: settings[0].seoDescription,
+    metadataBase: new URL('https://chadharanch.com'),
+
     openGraph: {
       title: `${settings[0].seoTitle}` ,
       description: settings[0].seoDescription,
