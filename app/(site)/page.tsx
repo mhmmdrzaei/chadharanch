@@ -13,7 +13,22 @@ export async function generateMetadata(
     title: `${settings[0].seoTitle}` ,
     description: settings[0].seoDescription,
     openGraph: {
-      images: [`${settings[0].seoImageUrl}`],
+      title: `${settings[0].seoTitle}` ,
+      description: settings[0].seoDescription,
+      url: 'https://chadharanch.com',
+      siteName: 'CHADHA RANCH',
+
+      images: [
+        {
+          url: `${settings[0].seoImageUrl}`,
+          width: 1200,
+          height: 627,
+        },
+        
+        
+      ],
+      locale: 'en_US',
+    type: 'website',
     },
   }
 }
