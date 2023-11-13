@@ -9,7 +9,6 @@ export async function generateMetadata(
   return {
     title: `${settings[0].seoTitle} | Press` ,
     description: settings[0].seoDescription,
-    metadataBase: new URL('https://cdn.sanity.io'),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
@@ -19,7 +18,7 @@ export async function generateMetadata(
 
       images: [
         {
-          url: `${settings[0].seoImageUrl}`,
+          url: 'https://cdn.sanity.io/images/k6c4sqei/production/da9bab630e1b88eaa72e1768026f467a701b7ea3-1200x627.png',
           width: 1200,
           height: 627,
         },

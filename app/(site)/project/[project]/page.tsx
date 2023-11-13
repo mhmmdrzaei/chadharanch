@@ -20,12 +20,11 @@ export async function generateMetadata(
   return {
     title: `${settings[0].seoTitle} | ${project.title}` ,
     description: settings[0].seoDescription,
-    metadataBase: new URL('https://cdn.sanity.io'),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
       description: settings[0].seoDescription,
-      url: 'https://chadharanch.com',
+      url: 'https://cdn.sanity.io/images/k6c4sqei/production/da9bab630e1b88eaa72e1768026f467a701b7ea3-1200x627.png',
       siteName: 'CHADHA RANCH',
 
       images: [
