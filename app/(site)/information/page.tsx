@@ -7,11 +7,12 @@ import type { Metadata } from 'next'
 export async function generateMetadata(
 ): Promise<Metadata> {
   const settings = await getsettings()
+  const img = settings[0].seoImageUrl
 
   return {
     title: `${settings[0].seoTitle} | Information` ,
     description: settings[0].seoDescription,
-    metadataBase: new URL('https://cdn.sanity.io'),
+    metadataBase: new URL('https://cdn.sanity.io/images/'),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
@@ -22,7 +23,7 @@ export async function generateMetadata(
 
       images: [
         {
-          url: `${settings[0].seoImageUrl}`,
+          url: `${img}`,
           width: 1200,
           height: 627,
         },
