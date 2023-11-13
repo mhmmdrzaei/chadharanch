@@ -1,10 +1,9 @@
 import { getsettings, getCat, getPress } from '@/sanity/sanity.utils'
 import Header from '../components/header/header.component';
 import PressContent from '../components/pressContent/pressContent.component';
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 
 export async function generateMetadata(
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const settings = await getsettings()
   return {

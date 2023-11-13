@@ -11,8 +11,7 @@ type Props = {
 
  
 export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
+  { params }: Props
 ): Promise<Metadata> {
   const slug = params.project;
   const settings = await getsettings()
