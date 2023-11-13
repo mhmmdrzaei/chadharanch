@@ -71,7 +71,7 @@ export default function ProjectImages({ project }: HeaderProps) {
             loading="eager" 
             src={photo.src}
             alt={photo.alt}
-            width={700}
+            width={1200}
             height={photo.height}
             onClick={() => openLightbox(idx)}
           />

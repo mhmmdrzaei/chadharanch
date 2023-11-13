@@ -4,6 +4,8 @@ import { useState } from 'react';
 import ProjectDetails from '../projectDetails/projectDetails.component';
 import { Project } from '@/sanity/types/Project';
 
+export const dynamic = 'force-dynamic'
+
 type PasswordProtectedProjectProps = {
   project: Project;
 };
@@ -28,7 +30,7 @@ const PasswordProtectedProject: React.FC<PasswordProtectedProjectProps> = ({ pro
 
       return (
         <section className='passwordProtected'>
-          <h3>Password Protected</h3>
+          <h2>Password Protected</h2>
           <p>Please enter the password to access this content:</p>
           <input
             type="password"
