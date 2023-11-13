@@ -8,12 +8,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const settings = await getsettings()
   const url= settings[0].seoImageUrl.toString()
-
   return {
     title: `${settings[0].seoTitle} | Information` ,
     description: settings[0].seoDescription,
   
-    // metadataBase: new URL('https://chadharanch.com'),
+    metadataBase: new URL('https://chadharanch.com'),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
