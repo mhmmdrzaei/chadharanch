@@ -4,10 +4,9 @@ import ProjectListing from './components/projectListing/projectListing.component
 import Footer from './components/footer/footer.component'
 import HeroImage from './components/heroImg/heroImg.component'
 
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
  
 export async function generateMetadata(
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const settings = await getsettings()
   return {
