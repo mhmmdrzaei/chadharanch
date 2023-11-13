@@ -2,15 +2,17 @@ import { getsettings, getInformation, getCat } from '@/sanity/sanity.utils'
 import Header from '../components/header/header.component';
 import InfoContent from '../components/infoContent/infoContent.component';
 
-import type { Metadata } from 'next'
+import type { Metadata, GetServerSidePropsContext } from 'next'
  
 export async function generateMetadata(
+  context: GetServerSidePropsContext
 ): Promise<Metadata> {
   const settings = await getsettings()
+
   return {
     title: `${settings[0].seoTitle} | Information` ,
     description: settings[0].seoDescription,
-    metadataBase: new URL('https://chadharanch.com'),
+    metadataBase: new URL('https://cdn.sanity.io'),
 
     openGraph: {
       title: `${settings[0].seoTitle}` ,
