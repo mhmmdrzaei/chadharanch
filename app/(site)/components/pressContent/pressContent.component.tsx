@@ -16,7 +16,7 @@ type Components = {
 
 type HeaderProps = {
   press: Press[];
-};
+}; 
 
 const components: Components = {
   marks: {

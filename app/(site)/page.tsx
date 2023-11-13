@@ -5,6 +5,7 @@ import Footer from './components/footer/footer.component'
 import HeroImage from './components/heroImg/heroImg.component'
 
 import type { Metadata } from 'next'
+export const dynamic = 'force-dynamic'
  
 export async function generateMetadata(
 ): Promise<Metadata> {

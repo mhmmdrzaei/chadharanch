@@ -2,7 +2,7 @@ import { getsettings, getCat, getPress } from '@/sanity/sanity.utils'
 import Header from '../components/header/header.component';
 import PressContent from '../components/pressContent/pressContent.component';
 import type { Metadata } from 'next'
-
+export const dynamic = 'force-dynamic'
 export async function generateMetadata(
 ): Promise<Metadata> {
   const settings = await getsettings()

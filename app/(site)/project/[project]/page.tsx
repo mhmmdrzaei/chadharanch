@@ -3,6 +3,7 @@ import { Project } from '@/sanity/types/Project'
 import Header from "../../components/header/header.component";
 import ProjectPage from "../../components/singleProjectListing/singleProjectListing.component";
 import type { Metadata, ResolvingMetadata } from 'next'
+export const dynamic = 'force-dynamic'
 
 type Props = {
     params: { project: string }

@@ -3,6 +3,7 @@ import Header from '../components/header/header.component';
 import InfoContent from '../components/infoContent/infoContent.component';
 
 import type { Metadata } from 'next'
+export const dynamic = 'force-dynamic'
  
 export async function generateMetadata(
 ): Promise<Metadata> {
