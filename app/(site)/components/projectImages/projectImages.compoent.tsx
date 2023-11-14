@@ -4,8 +4,11 @@ import { Project } from '@/sanity/types/Project';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Fullscreen } from 'yet-another-react-lightbox/plugins';
+import PhotoAlbum from "react-photo-album";
+
+
 
 type PhotoType = {
   key: string;
@@ -31,8 +34,8 @@ type HeaderProps = {
 export default function ProjectImages({ project }: HeaderProps) {
   const mainImage = {
     src: project.mainimage,
-    width: "auto" as string,
-    height: 1200 as number,
+    width: 800 as number,
+    height: 800 as number,
     key: uuidv4(),
     alt: `${project.title} front image`,
   };
@@ -42,8 +45,8 @@ export default function ProjectImages({ project }: HeaderProps) {
       .filter((image: { _type: string }) => image._type === "projectImage")
       .map((image: { url: string; attribution: string }) => ({
         src: image.url,
-        width: "auto" as string,
-        height: 1200 as number,
+        width: 800 as number,
+        height: 800 as number,
         alt: image.attribution,
         key: uuidv4(),
       }))
@@ -64,23 +67,8 @@ export default function ProjectImages({ project }: HeaderProps) {
 
   return (
     <>
-      <div className="image-gallery">
-        {photos.map((photo, idx) => (
-          <figure key={photo.key}>
-            <Image
-            loading="eager" 
-            priority={true}
-            src={photo.src}
-            alt={photo.alt}
-            width={1200}
-            height={photo.height}
-            onClick={() => openLightbox(idx)}
-          />
-
-          </figure>
-          
-        ))}
-      </div>
+    <PhotoAlbum layout="masonry" photos={photos} columns={window.innerWidth >= 700 ? 2 : 1} onClick={({ index }) => setIndex(index)} spacing={12}/>
+      
       <Lightbox
         slides={photos}
         open={index >= 0}

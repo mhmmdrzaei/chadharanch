@@ -29,7 +29,7 @@ export default function ProjectListing({ projects, categories }: HeaderProps) {
                   <Link href={`/project/${project.slug}`}>
                     <section className="projectEach">
                     {project.mainimage && (
-                      <figure><Image src={project.mainimage} width={700} height={700}className="homeImg" loading="eager"  alt={`${project.title} designed by Chadha Ranch`} /></figure>
+                      <figure><Image src={project.mainimage} width={700} height={700}className="homeImg"  alt={`${project.title} designed by Chadha Ranch`} /></figure>
                       
 
                     )}

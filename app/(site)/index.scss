@@ -457,3 +457,10 @@ footer {
     }
 
 }
+
+.react-photo-album--column {
+    img {
+        aspect-ratio: initial !important;
+        cursor: initial !important;
+    }
+}
