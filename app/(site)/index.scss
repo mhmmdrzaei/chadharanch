@@ -462,12 +462,17 @@ footer {
     div {
             aspect-ratio: initial !important;
             cursor: initial !important;
-            margin-bottom: 12px;
+            margin-bottom: 5px;
             video {
                 width: 100%;
                 height: auto;
+                pointer-events: none !important;
             }
         
     }
 
+
+}
+.yarl__navigation_next, .yarl__navigation_prev {
+    display: none !important;
 }

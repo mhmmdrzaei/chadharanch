@@ -1,15 +1,8 @@
-"use client"
+
 import { v4 as uuidv4 } from 'uuid';
 import { Project } from '@/sanity/types/Project';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import { useState } from 'react';
-// import Image from 'next/image';
-import { Fullscreen } from 'yet-another-react-lightbox/plugins';
 import PhotoAlbum from "react-photo-album";
 import NextJsImage from '../nextjsimage/nextjsImage.component';
-
-
 
 type PhotoType = {
   key: string;
@@ -18,8 +11,6 @@ type PhotoType = {
   height: number;
   alt: string;
   _type: string;
-
-
   
 };
 
@@ -31,8 +22,8 @@ type HeaderProps = {
 export default function ProjectImages({ project }: HeaderProps) {
   const mainImage: PhotoType = {
     src: project.mainimage,
-    width: 800 as number,
-    height: 800 as number,
+    width: 1200 as number,
+    height: 1200 as number,
     key: uuidv4(),
     _type: '',
     alt: `${project.title} by Chadha Ranch in New York City`,
@@ -45,8 +36,8 @@ export default function ProjectImages({ project }: HeaderProps) {
         if (media._type === 'projectImage') {
           return {
             src: media.url,
-            width: 800,
-            height: 800,
+            width: 1200,
+            height: 1200,
             alt: media.attribution,
             key: uuidv4(),
             _type: media._type
@@ -71,35 +62,31 @@ export default function ProjectImages({ project }: HeaderProps) {
   
 
   const photos: PhotoType[] = [mainImage, ...additionalMedia];
-  const [index, setIndex] = useState(-1);
-  const openLightbox = (index: number) => {
-    setIndex(index);
-  };
 
-  const closeLightbox = () => {
-    setIndex(-1);
-  };
+  
 
 
+
+  function openLightbox(index: any): void {
+    throw new Error('Function not implemented.');
+  }
 
   return (
     <>
     <PhotoAlbum layout="masonry" 
     photos={photos}
-    renderPhoto={NextJsImage}
-    columns={window.innerWidth >= 700 ? 2 : 1} 
-    // onClick={({ index }) => setIndex(index)}
-    spacing={12}/>
-      
-      
-      <Lightbox
-        slides={photos}
-        open={index >= 0}
-        index={index}
-        close={() => setIndex(-1)}
-        // enable optional lightbox plugins
-        plugins={[Fullscreen]}
+    renderPhoto={(props) => (
+      <NextJsImage
+      onClick={function (index: number): void {
+        throw new Error('Function not implemented.');
+      } } {...props}      
       />
+    )}
+    columns={window.innerWidth >= 700 ? 2 : 1} 
+    spacing={10}
+    />
+      
+    
     </>
   );
 }
