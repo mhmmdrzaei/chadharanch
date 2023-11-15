@@ -459,8 +459,15 @@ footer {
 }
 
 .react-photo-album--column {
-    img {
-        aspect-ratio: initial !important;
-        cursor: initial !important;
+    div {
+            aspect-ratio: initial !important;
+            cursor: initial !important;
+            margin-bottom: 12px;
+            video {
+                width: 100%;
+                height: auto;
+            }
+        
     }
+
 }

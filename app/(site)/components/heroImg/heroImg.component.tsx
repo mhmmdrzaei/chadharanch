@@ -19,7 +19,7 @@ export default function HeroImage({ settings }: HeaderProps) {
               {siteSetting.herovisual.map((hero) => (
                 <div key={hero._key} className='heroContainer' >
                   {hero._type === 'hero_image' && (
-                    <Image src={hero.heroImgUrl} alt={`Hero Image ${hero._key}`} width={2000} height={2000} loading="eager" />
+                    <Image src={hero.heroImgUrl} alt={`Hero Image ${hero._key}`} width={800} height={800} loading="eager" />
                   )}
                   {hero._type === 'hero_video' && (
                     <video controls src={hero.heroImgUrl} />

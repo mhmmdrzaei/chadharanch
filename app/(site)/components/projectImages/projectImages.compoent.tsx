@@ -7,53 +7,70 @@ import { useState } from 'react';
 // import Image from 'next/image';
 import { Fullscreen } from 'yet-another-react-lightbox/plugins';
 import PhotoAlbum from "react-photo-album";
+import NextJsImage from '../nextjsimage/nextjsImage.component';
 
 
 
 type PhotoType = {
   key: string;
-  mainImage: string;
   src: string;
   width: number;
   height: number;
   alt: string;
-  open: boolean;
-  index: number;
-  close: () => void;
-  plugins: any[];
-  additionalImages: {
-    url: string;
-    attribution: string;
-  };
+  _type: string;
+
+
+  
 };
+
 
 type HeaderProps = {
   project: Project;
 };
 
 export default function ProjectImages({ project }: HeaderProps) {
-  const mainImage = {
+  const mainImage: PhotoType = {
     src: project.mainimage,
     width: 800 as number,
     height: 800 as number,
     key: uuidv4(),
-    alt: `${project.title} front image`,
+    _type: '',
+    alt: `${project.title} by Chadha Ranch in New York City`,
+   
   };
 
-  const additionalImages = project.projectImages && project.projectImages.length > 0
-  ? project.projectImages
-      .filter((image: { _type: string }) => image._type === "projectImage")
-      .map((image: { url: string; attribution: string }) => ({
-        src: image.url,
-        width: 800 as number,
-        height: 800 as number,
-        alt: image.attribution,
-        key: uuidv4(),
-      }))
-  : [];
+  const additionalMedia: PhotoType[] = project.projectImages && project.projectImages.length > 0
+    ? project.projectImages
+      .map((media: { _type: string; url: string; attribution: string }) => {
+        if (media._type === 'projectImage') {
+          return {
+            src: media.url,
+            width: 800,
+            height: 800,
+            alt: media.attribution,
+            key: uuidv4(),
+            _type: media._type
+          }
+        } else if (media._type === 'project_video') {
+          return {
+            src: media.url,
+            width: 800,
+            height: 800,
+            alt: media.attribution,
+            key: uuidv4(),
+            _type: media._type
+          } 
+        } else {
+          // Handle other media types if needed
+          return null;
+        }
+      })
+      .filter((media: PhotoType | null) => media !== null)
+    : [];
 
-  const photos: PhotoType[] = [mainImage, ...additionalImages];
+  
 
+  const photos: PhotoType[] = [mainImage, ...additionalMedia];
   const [index, setIndex] = useState(-1);
   const openLightbox = (index: number) => {
     setIndex(index);
@@ -67,7 +84,13 @@ export default function ProjectImages({ project }: HeaderProps) {
 
   return (
     <>
-    <PhotoAlbum layout="masonry" photos={photos} columns={window.innerWidth >= 700 ? 2 : 1} onClick={({ index }) => setIndex(index)} spacing={12}/>
+    <PhotoAlbum layout="masonry" 
+    photos={photos}
+    renderPhoto={NextJsImage}
+    columns={window.innerWidth >= 700 ? 2 : 1} 
+    // onClick={({ index }) => setIndex(index)}
+    spacing={12}/>
+      
       
       <Lightbox
         slides={photos}

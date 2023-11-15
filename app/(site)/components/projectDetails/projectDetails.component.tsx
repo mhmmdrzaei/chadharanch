@@ -2,6 +2,7 @@ import { Project } from '@/sanity/types/Project';
 import ProjectImages from "../../components/projectImages/projectImages.compoent";
 import { PortableText } from "@portabletext/react";
 
+
 export const dynamic = 'force-dynamic'
 
 type LinkMark = {
