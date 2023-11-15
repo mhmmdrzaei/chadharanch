@@ -22,8 +22,8 @@ type HeaderProps = {
 export default function ProjectImages({ project }: HeaderProps) {
   const mainImage: PhotoType = {
     src: project.mainimage,
-    width: 1200 as number,
-    height: 1200 as number,
+    width: 800 as number,
+    height: 800 as number,
     key: uuidv4(),
     _type: '',
     alt: `${project.title} by Chadha Ranch in New York City`,
@@ -36,8 +36,8 @@ export default function ProjectImages({ project }: HeaderProps) {
         if (media._type === 'projectImage') {
           return {
             src: media.url,
-            width: 1200,
-            height: 1200,
+            width: 800,
+            height: 800,
             alt: media.attribution,
             key: uuidv4(),
             _type: media._type
