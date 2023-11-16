@@ -40,16 +40,16 @@ const closeMenu = () => {
                 .sort((a, b) => (a.sort || Infinity) - (b.sort || Infinity))
                 .map((category) => (
                     <li key={category._id}>
-                    <Link href={`/#${category.slug}`}>
+                    <Link href={`/#${category.slug}`} onClick={openMenu}>
                         {category.name}
                     </Link>
                     </li>
                 ))}
             </ul>
             <section className="menuLinks" >
-            <Link href={`/press`} className='pressLink'>Press</Link>
-            <Link href={`/information`} className='infoLink'>Information</Link>
-            <Link href={`mailto:${setting.email}`}>{setting.email}</Link>
+            <Link href={`/press`} className='pressLink' onClick={openMenu}>Press</Link>
+            <Link href={`/information`} className='infoLink' onClick={openMenu}>Information</Link>
+            <Link href={`mailto:${setting.email}`} onClick={openMenu}>{setting.email}</Link>
             </section>
             <section className="latlong">
                 {setting.latlong}
