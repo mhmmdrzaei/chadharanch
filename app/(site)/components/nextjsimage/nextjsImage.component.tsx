@@ -47,7 +47,7 @@ export default function NextJsImage({ photo }: NextJsImageProps) {
             height={photo.height}
           />
         ) : photo._type === 'project_video' ? (
-          <video no-controls autoPlay loop muted width={photo.width} height={photo.height}>
+          <video  no-controls="true" autoPlay playsInline loop muted width={photo.width} height={photo.height}>
             <source src={photo.src} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

@@ -22,7 +22,7 @@ export default function HeroImage({ settings }: HeaderProps) {
                     <Image src={hero.heroImgUrl} alt={`Hero Image ${hero._key}`} width={2000} height={2000} loading="eager" priority />
                   )}
                   {hero._type === 'hero_video' && (
-                    <video no-controls autoPlay loop muted src={hero.heroImgUrl} />
+                    <video no-controls="true" playsInline autoPlay loop muted src={hero.heroImgUrl} />
                   )}
                 </div>
               ))}
